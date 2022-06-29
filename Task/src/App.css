@@ -1,0 +1,32 @@
+.wish-legend {
+    color: khaki;
+}
+
+.wish-cont-buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+
+.wish-cont-button_agregar {
+    background-color: green;
+    cursor: pointer;
+}
+
+.wish-cont-button_eliminar {
+    background-color: red;
+    cursor: pointer;
+}
+
+.wish-label-open {
+    color: blue;
+}
+.wish-label-close {
+    color: red;
+}
+.wish-label_warning {
+    color: rgb(255, 200, 0);
+}
+.wish-label_error {
+    color: rgb(255, 0, 225);
+}
