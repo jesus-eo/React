@@ -1,10 +1,10 @@
-
+import PokemonShow from '../Components/PokemonShow';
 import './App.css';
 
 function App() {
   return (
-    <div>
-      <h1>hello world</h1>
+    <div className='container-wrapper'>
+      <PokemonShow />
     </div>
   );
 }
