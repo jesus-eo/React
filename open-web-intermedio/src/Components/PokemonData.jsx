@@ -16,10 +16,10 @@ function PokemonData({ dataPokemon, mostrarPokedex }) {
                         <img src={pokemon.sprites.front_default} alt="Imagen Pokemon" />
                         <ul className='dataPokemon-card_ul'>
                             <li>Nombre: {pokemon.name}</li>
-                            <li>Habilidades: {pokemon.abilities.map((ability) => {
-                                return <ul key={pokemon.id}><li>{ability.ability.name}</li></ul>
+                            <li><ul>Habilidades: {pokemon.abilities.map((ability) => {
+                                return <li key={pokemon.id}>{ability.ability.name}</li>
                             })}
-                            </li>
+                            </ul></li>
                         </ul>
                     </div>
                 }

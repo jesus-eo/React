@@ -1,3 +1,17 @@
+a {
+    text-decoration: none;
+    color: blue;
+}
+.activeStyle {
+    font-weight: bold;
+    color: red;
+}
+.container-wrapper {
+    background-color: black;
+    height: 100%;
+    min-height: 100vh;
+}
+
 .pokshow-container {
     display: flex;
     flex-direction: column;
@@ -59,11 +73,27 @@
 .dataPokemon-container-card {
     display: flex;
     flex-direction: column;
+    margin: 2%;
 }
 
 .ocultar-pokedex {
- display: none;
+    display: none;
 }
+
 .ver-pokedex {
- display: initial;
+    display: initial;
+}
+
+.indexpokemon-wrapper {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3%;
+}
+.indexpokemon-navigation {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
 }

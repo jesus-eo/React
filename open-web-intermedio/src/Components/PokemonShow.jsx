@@ -14,30 +14,33 @@ function PokemonShow() {
 
   return (
     <>
-      <div className='pokshow-container'>
-        <h1>Elige tu pokemon:</h1>
-        <select className='pokshow-select-pokemon' onChange={(e) => { setNombre(e.target.value) }} name="pokemon" id="">
-          <option value="charizard">Charizard</option>
-          <option value="blastoise">Blastoise</option>
-          <option value="pidgeot">Pidgeot</option>
-        </select>
-        {/*  <input
+      <div className='container-wrapper'>
+        <div className='pokshow-container'>
+          <h1>Elige tu pokemon:</h1>
+          <select className='pokshow-select-pokemon' onChange={(e) => { setNombre(e.target.value) }} name="pokemon" id="">
+            <option value="charizard">Charizard</option>
+            <option value="blastoise">Blastoise</option>
+            <option value="pidgeot">Pidgeot</option>
+          </select>
+          {/*  <input
         type='text'
         value={nombre}
         onChange={(e) => { setNombre(e.target.value) }}></input> */}
-        <button className='pokshow-btn-elegir' onClick={() => { traerPokemon(nombre); }}>Elegir</button>
-        <button className=
-          {ClassName(!mostrarPokedex ? 'ver-pokedex' : 'ocultar-pokedex', 'pokshow-btn-pokedex')}
-          onClick={() => { setMostrarPokedex(true) }}
-        >Ver Pokedex
-        </button>
-        <button
-          onClick={() => { setMostrarPokedex(false) }}
-          className={ClassName(mostrarPokedex ? 'ver-pokedex' : 'ocultar-pokedex', 'pokshow-btn-pokedex')}>Ocultar Pokedex
-        </button>
+          <button className='pokshow-btn-elegir' onClick={() => { traerPokemon(nombre); }}>Elegir
+          </button>
+          <button
+            className={ClassName(!mostrarPokedex ? 'ver-pokedex' : 'ocultar-pokedex', 'pokshow-btn-pokedex')}
+            onClick={() => { setMostrarPokedex(true) }}
+          >Ver Pokedex
+          </button>
+          <button
+            onClick={() => { setMostrarPokedex(false) }}
+            className={ClassName(mostrarPokedex ? 'ver-pokedex' : 'ocultar-pokedex', 'pokshow-btn-pokedex')}>Ocultar Pokedex
+          </button>
+        </div>
+        <PokemonData dataPokemon={dataPokemon} mostrarPokedex={mostrarPokedex} />
       </div>
-      <PokemonData dataPokemon={dataPokemon} mostrarPokedex={mostrarPokedex} />
-
+      
     </>
   )
 }
