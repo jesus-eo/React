@@ -11,7 +11,7 @@ function PokemonShow() {
   const [dataPokemon, setDataPokemon] = useState([]);
   const [nombre, setNombre] = useState('charizard');
   const [mostrarPokedex, setMostrarPokedex] = useState(false);
-
+  
   return (
     <>
       <div className='container-wrapper'>
@@ -38,7 +38,7 @@ function PokemonShow() {
             className={ClassName(mostrarPokedex ? 'ver-pokedex' : 'ocultar-pokedex', 'pokshow-btn-pokedex')}>Ocultar Pokedex
           </button>
         </div>
-        <PokemonData dataPokemon={dataPokemon} mostrarPokedex={mostrarPokedex} />
+        <PokemonData dataPokemon={dataPokemon} mostrarPokedex={mostrarPokedex}/>
       </div>
       
     </>

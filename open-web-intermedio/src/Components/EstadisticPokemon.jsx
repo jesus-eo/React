@@ -5,7 +5,7 @@ import { Link, useParams } from 'react-router-dom'
 export const Nombre = () => {
     const {nombre} = useParams();
     return <>
-        <p>El nombre del pokemon elegido es: {nombre}</p>  
+        <p style={{color: 'white'}}>El nombre del pokemon elegido es: {nombre}</p>  
         </>        
 }
 

@@ -3,8 +3,7 @@ import React from 'react'
 const CombatePokemon = () => {
   return (
     <div>
-     <h2 style={{color: 'white'}}> CombatePokemon </h2>
-
+     <h2 style={{color: 'white'}}> Combate Pokemon </h2>
      </div>
   )
 }

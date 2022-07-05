@@ -7,8 +7,10 @@ import ClassName from 'classnames'
  * @param {dataPokemon} array con todos los pokemon 
  * @returns 
  */
+ 
 function PokemonData({ dataPokemon, mostrarPokedex }) {
     return (
+      
         <div className={ClassName(mostrarPokedex ? 'dataPokemon-container-wrapper' : 'ocultar-pokedex')}>
             {dataPokemon.map((pokemon) => {
                 if (pokemon.id) {
@@ -22,6 +24,7 @@ function PokemonData({ dataPokemon, mostrarPokedex }) {
                             </ul></li>
                         </ul>
                     </div>
+                    
                 }
                 return ""
             })}
@@ -31,7 +34,7 @@ function PokemonData({ dataPokemon, mostrarPokedex }) {
 
 PokemonData.propTypes = {
     dataPokemon: PropTypes.array.isRequired,
-    mostrarPokedex: PropTypes.bool
+    mostrarPokedex: PropTypes.bool,
 }
 
 export default PokemonData
