@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+Creando Crud, para ello utilizamos la libreria axios para hacer peticiones al backend(Laravel)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+-Paquetes instalados:  
+npm install axios  
+
 
 ## Available Scripts
 
