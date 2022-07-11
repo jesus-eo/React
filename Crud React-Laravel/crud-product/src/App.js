@@ -8,8 +8,9 @@ function App() {
   return (
     <>
     <Routes>
-      <Route path='/edit' element={<Form/>}></Route>
-      <Route path='/' element={<Crud/>}></Route>
+      <Route exac path='/create' element={<Form/>}></Route>
+      <Route exac path='/edit/:productoId' element={<Form/>}></Route>
+      <Route exac path='/' element={<Crud/>}></Route>
     </Routes>
     </> 
   );

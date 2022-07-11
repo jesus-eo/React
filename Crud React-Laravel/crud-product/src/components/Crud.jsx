@@ -22,6 +22,7 @@ export const Crud = () => {
     }, [])
     return (
         <div>
+            <Link to={'/create'}>Crear</Link>
             <table>
                 <thead>
                     <tr>
@@ -46,7 +47,7 @@ export const Crud = () => {
                             <td>{producto.precio}</td>
                             <td>
                                 {/* Va al formulario de editar */}
-                                <Link to={'/edit'}>Editar</Link>
+                                <Link to={'/edit/' + producto.id}>Editar</Link>
                                 {/* peticion al backend delete */}
                                 <button onClick={() => { fetchDelete(producto.id)}}>Eliminar</button>
                             </td>
