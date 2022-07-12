@@ -1,7 +1,10 @@
-Creando Crud, para ello utilizamos la libreria axios para hacer peticiones al backend(Laravel)
+Creando Crud, para ello utilizamos la libreria axios para hacer peticiones al backend(Laravel).
+Uso contextProvider para guardar los productos para utilizarlos en componentes del mismo nivel, navigate para redireccionar.
 
 -Paquetes instalados:  
 npm install axios  
+npm install classnames -> Para añadir varias clases a un elemento html.
+npm install react-router-dom -> Para crear rutas (links)
 
 
 ## Available Scripts
