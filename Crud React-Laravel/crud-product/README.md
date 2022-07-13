@@ -5,7 +5,7 @@ Uso contextProvider para guardar los productos para utilizarlos en componentes d
 npm install axios  
 npm install classnames -> Para añadir varias clases a un elemento html.
 npm install react-router-dom -> Para crear rutas (links)
-
+npm i react-loading -> Para utilizar el spiner (cargando)
 
 ## Available Scripts
 

@@ -11,17 +11,18 @@ import { fetchCreate, fetchUpdate } from '../services/peticiones'
 export const Form = () => {
 
   const navigate = useNavigate();
+  /*  Id que recogo del link */
   const { productoId } = useParams();
-  /* Datos contexto */
-  const {valueGet, valueModal} = useContext(contextResponseGet);
+  /* Datos contexto donde descompongo el objeto que recibo */
+  const { valueGet, valueModal } = useContext(contextResponseGet);
   const [responseGet] = valueGet;
   const [visibilitiModal, setVisibilitiModal] = valueModal;
-  
+
   const [exitId, setExitId] = useState(false);
   const [valueName, setValueName] = useState('');
   const [valueDescripcion, setValueDescripcion] = useState('');
   const [valuePrecio, setValuePrecio] = useState('');
-  
+
 
   useEffect(() => {
     if (productoId) {
@@ -42,7 +43,7 @@ export const Form = () => {
     }
     e.preventDefault();
     fetchUpdate(productoId, producto);
-    setVisibilitiModal(true)
+    setVisibilitiModal({ visible: true, editando: true, eliminado: false })
     navigate('/');
   }
 
@@ -55,7 +56,8 @@ export const Form = () => {
     }
     e.preventDefault();
     fetchCreate(producto);
-    alert('Datos creado con exito');
+    setVisibilitiModal({ visible: true, editando: false, eliminado: false })
+    navigate('/');
   }
 
   /*   const fetchUpdate = async (e) => {
@@ -82,8 +84,6 @@ export const Form = () => {
 
   return (
     <>
-      
-
       <div className='flex justify-center min-h-screen items-center flex-col '>
         <h1>Formulario para {exitId ? 'editar' : 'crear'}</h1>
         <form
