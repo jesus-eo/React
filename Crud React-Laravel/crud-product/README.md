@@ -1,5 +1,4 @@
-Creando Crud, para ello utilizamos la libreria axios para hacer peticiones al backend(Laravel).
-Uso contextProvider para guardar los productos para utilizarlos en componentes del mismo nivel, navigate para redireccionar.
+En este ejercicio he realizado un Crud de productos con busqueda, para ello utilizamos la libreria axios para hacer peticiones al backend(Laravel), uso el hook useContext para guardar los productos para utilizarlos en componentes del mismo nivel, navigate para redireccionar. 
 
 -Paquetes instalados:  
 npm install axios  

@@ -15,6 +15,7 @@ export const Crud = () => {
     const [responseGet, setResponseGet] = valueGet;
     const [visibilitiModal, setVisibilitiModal] = valueModal;
     const [loading, setLoading] = useState(false);
+    const [search, setSearch] = useState('');
 
     const showProducts = () => { fetchGet().then(data => setResponseGet(data)) };
 
@@ -40,10 +41,16 @@ export const Crud = () => {
             return ' creado '
         }
     }
+
+   /*  Si es cadena vacia muestro todos los productos si no hago el filtrado */
+    const searchResult = !search ? responseGet : responseGet.filter((product) => product.nombre.toLowerCase().includes(search.toLowerCase()))
+
+    
     return (
         <>
             {loading ?      
             <div>
+                {/* Modal */}
             <div className={ClassNames(visibilitiModal.visible ? 'modal-open' : 'modal-close',
                 visibilitiModal.eliminado ? "bg-red-100 border-red-400 text-red-700" : "bg-green-100 border-green-400 text-green-700", " border  px-4 py-3 mb-4 rounded relative")} role="alert">
                 <span className="block sm:inline">Producto
@@ -57,8 +64,16 @@ export const Crud = () => {
                 </button>
 
             </div>
-            <div>
-                <Link className=' bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-2 border no-underline cursor-pointer border-green-500 rounded' to={'/create'}>Crear</Link>
+
+            <div className='crud'>
+                <div className='crud-head_div flex justify-between'>
+                    <Link className=' ml-4 bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-2 border no-underline cursor-pointer border-green-500 rounded' to={'/create'}>Crear</Link>                 
+                    <div className='crud-search_input mr-5'>
+                        <label className='mr-2' htmlFor="search">Buscar:</label>
+                        <input type="search" name="search" id="search" placeholder='Busqueda por nombre' value={search} onChange={(e) => {setSearch(e.target.value)}} />
+                    </div>
+                </div>
+                
                 <table className='min-w-full mt-5 block sm:table'>
                     <thead className='block sm:table-header-group'>
                         <tr className='border border-grey-500 md:border-none block md:table-row absolute -top-full md:top-auto -left-full md:left-auto  md:relative '>
@@ -81,7 +96,7 @@ export const Crud = () => {
                         </tr>
                     </thead>
                     <tbody className='block sm:table-row-group'>
-                        {responseGet.map(producto => {
+                        {searchResult.map(producto => {
                             return <tr className='bg-gray-300 border border-grey-500 md:border-none block md:table-row' key={producto.id}>
                                 <td className='p-2 md:border md:border-grey-500 text-left block md:table-cell'>{producto.nombre}</td>
                                 <td className='p-2 md:border md:border-grey-500 text-left block md:table-cell'>{producto.descripcion}</td>
