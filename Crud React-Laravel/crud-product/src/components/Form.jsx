@@ -44,7 +44,7 @@ export const Form = () => {
     e.preventDefault();
     fetchUpdate(productoId, producto);
     setVisibilitiModal({ visible: true, editando: true, eliminado: false })
-    navigate('/');
+    navigate('/productos');
   }
 
 
@@ -57,7 +57,7 @@ export const Form = () => {
     e.preventDefault();
     fetchCreate(producto);
     setVisibilitiModal({ visible: true, editando: false, eliminado: false })
-    navigate('/');
+    navigate('/productos');
   }
 
   /*   const fetchUpdate = async (e) => {

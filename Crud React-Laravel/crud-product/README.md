@@ -1,3 +1,4 @@
+## `Crud producto usando laravel como API`
 En este ejercicio he realizado un Crud de productos con busqueda, para ello utilizamos la libreria axios para hacer peticiones al backend(Laravel), uso el hook useContext para guardar los productos para utilizarlos en componentes del mismo nivel, navigate para redireccionar. 
 
 -Paquetes instalados:  
@@ -6,48 +7,23 @@ npm install classnames -> Para añadir varias clases a un elemento html.
 npm install react-router-dom -> Para crear rutas (links)
 npm i react-loading -> Para utilizar el spiner (cargando)
 
-## Available Scripts
+## `Crud tareas usando redux toolkit`
+Seguimos la documentación Quick start para crear las carpetas para inicializar el proyecto.
+Creamos la carpeta app/store.js -> Seria el contexto
+Creamos la carpeta features/task/taskSlice.js donde dentro crearemos la funcionalidad de relacionadas con las tareas
+se utiliza el useDispatch -> Para llamar a las funciones  
+useSelector -> Para traer los datos que esten dentro del estado.
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+-Paquetes instalados:  
+npm install @reduxjs/toolkit react-redux
 
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+Documentación Redux-toolkit: https://redux-toolkit.js.org/
 
 ### Code Splitting
 

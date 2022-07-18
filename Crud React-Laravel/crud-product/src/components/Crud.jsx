@@ -16,8 +16,9 @@ export const Crud = () => {
     const [visibilitiModal, setVisibilitiModal] = valueModal;
     const [loading, setLoading] = useState(false);
     const [search, setSearch] = useState('');
+    const [error, setError] = useState('');
 
-    const showProducts = () => { fetchGet().then(data => setResponseGet(data)) };
+    const showProducts = async() => { await fetchGet().then(data => setResponseGet(data)) };
 
     const fetchDelete = async (id) => {
         alert('¿Deseas eliminar dicho producto?');
@@ -28,9 +29,11 @@ export const Crud = () => {
 
     useEffect(() => {
         setLoading(false);
-        showProducts();
+        showProducts().catch((error) => setError(error.message));
         setLoading(true);
+        console.log(error + 'errpr');
     }, [])
+    
 
     const textModal = () => {
         if (visibilitiModal.editando) {
@@ -48,6 +51,7 @@ export const Crud = () => {
     
     return (
         <>
+            {error && <p>{error}</p>}
             {loading ?      
             <div>
                 {/* Modal */}
