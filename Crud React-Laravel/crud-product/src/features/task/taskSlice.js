@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+
 const initialState = [
     {
         id: 1,
@@ -19,14 +20,18 @@ export const taskSlice = createSlice({
     initialState,
     reducers: {
         addTask: (state, action) => {
-            const {task, description} = action.payload;
-            return [...state, {task: task, description: description}]
+            console.log(action);
+            const {id, task, description} = action.payload;
+            return [...state, {id: id, task: task, description: description}]
+        },
+        deleteTask: (state, action) => {
+           return state = state.filter( task => task.id !== action.payload)
         }
     }
 })
 
 /* Exportamos las funciones que podemos utilizar */
-export const { addTask} = taskSlice.actions
+export const { addTask, deleteTask} = taskSlice.actions
 
 /* Aqui exportamos la propiedad reducer que utilizamos en el store(contexto) */
 export default taskSlice.reducer

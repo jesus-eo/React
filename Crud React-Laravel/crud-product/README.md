@@ -16,6 +16,7 @@ useSelector -> Para traer los datos que esten dentro del estado.
 
 -Paquetes instalados:  
 npm install @reduxjs/toolkit react-redux
+mpn i uuid -> Para generar id únicos
 
 ## Learn More
 

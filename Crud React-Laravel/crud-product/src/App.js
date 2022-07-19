@@ -8,6 +8,7 @@ import { ContextForm } from './globalContext/ContextForm';
 import { store } from './app/store';
 import { Provider } from 'react-redux';
 import { Task } from './components/Task';
+import { TaskForm } from './components/TaskForm';
 
 function App() {
   return (
@@ -31,8 +32,8 @@ function App() {
       <Provider store={store}>
         <Routes>
           <Route exac path='/tareas' element={<Task/>}></Route>
-          <Route exac path='/tarea'></Route>
-          <Route exac path='/tarea/:tareaID'></Route>
+          <Route exac path='/tarea' element={<TaskForm/>}></Route>
+          <Route exac path='/tarea/:tareaId' element={<TaskForm/>}></Route>
         </Routes>
       </Provider>
     </>
