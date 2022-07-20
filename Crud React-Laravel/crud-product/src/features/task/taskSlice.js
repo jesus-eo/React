@@ -20,18 +20,35 @@ export const taskSlice = createSlice({
     initialState,
     reducers: {
         addTask: (state, action) => {
-            console.log(action);
-            const {id, task, description} = action.payload;
-            return [...state, {id: id, task: task, description: description}]
+            const { id, task, description } = action.payload;
+            return [...state, { id: id, task: task, description: description }]
+        },
+        editTask: (state, action) => {
+            const { id, task, description } = action.payload;
+            /*Otra forma de hacerlo 
+             state.map((taske) => { 
+                if(taske.id === id) {
+                     taske.id = id;
+                     taske.task = task;
+                     taske.description = description;
+                }
+                return taske
+             }) */
+            const foundTask = state.find(task => task.id === id)
+            if (foundTask) {
+                foundTask.id = id;
+                foundTask.task = task;
+                foundTask.description = description;
+            }
         },
         deleteTask: (state, action) => {
-           return state = state.filter( task => task.id !== action.payload)
+            return state = state.filter(task => task.id !== action.payload)
         }
     }
 })
 
 /* Exportamos las funciones que podemos utilizar */
-export const { addTask, deleteTask} = taskSlice.actions
+export const { addTask, deleteTask, editTask } = taskSlice.actions
 
 /* Aqui exportamos la propiedad reducer que utilizamos en el store(contexto) */
 export default taskSlice.reducer

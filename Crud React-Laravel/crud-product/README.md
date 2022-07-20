@@ -4,7 +4,7 @@ En este ejercicio he realizado un Crud de productos con busqueda, para ello util
 -Paquetes instalados:  
 npm install axios  
 npm install classnames -> Para añadir varias clases a un elemento html.
-npm install react-router-dom -> Para crear rutas (links)
+npm install react-router-dom -> Para crear rutas (links) useParam
 npm i react-loading -> Para utilizar el spiner (cargando)
 
 ## `Crud tareas usando redux toolkit`
