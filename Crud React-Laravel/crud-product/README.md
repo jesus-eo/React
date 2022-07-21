@@ -1,7 +1,8 @@
 ## `Crud producto usando laravel como API`
 En este ejercicio he realizado un Crud de productos con busqueda, para ello utilizamos la libreria axios para hacer peticiones al backend(Laravel), uso el hook useContext para guardar los productos para utilizarlos en componentes del mismo nivel, navigate para redireccionar. 
 
--Paquetes instalados:  
+-Paquetes instalados:
+thunder client-> Extensión para comprobar peticiones en el Back-end  
 npm install axios  
 npm install classnames -> Para añadir varias clases a un elemento html.
 npm install react-router-dom -> Para crear rutas (links) useParam

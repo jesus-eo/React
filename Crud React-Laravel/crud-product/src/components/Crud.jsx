@@ -18,7 +18,7 @@ export const Crud = () => {
     const [search, setSearch] = useState('');
     const [error, setError] = useState('');
 
-    const showProducts = async() => { await fetchGet().then(data => setResponseGet(data)) };
+    const showProducts = async() => { await fetchGet().then(data => setResponseGet(data)).catch((error) => setError(error.message)) };
 
     const fetchDelete = async (id) => {
         alert('¿Deseas eliminar dicho producto?');
@@ -28,11 +28,10 @@ export const Crud = () => {
     }
 
     useEffect(() => {
-        setLoading(false);
-        showProducts().catch((error) => setError(error.message));
-        setLoading(true);
-        console.log(error + 'errpr');
-    }, [])
+        showProducts();
+        error ?  setLoading(false) : setLoading(true);
+         console.log(error + 'errpr');
+    }, [error])
     
 
     const textModal = () => {
@@ -51,7 +50,7 @@ export const Crud = () => {
     
     return (
         <>
-            {error && <p>{error}</p>}
+            {error && <p className='text-red-600'>{error}</p>}
             {loading ?      
             <div>
                 {/* Modal */}
@@ -69,7 +68,7 @@ export const Crud = () => {
 
             </div>
 
-            <div className='crud'>
+            <div className='crud mt-4'>
                 <div className='crud-head_div flex justify-between'>
                     <Link className=' ml-4 bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-2 border no-underline cursor-pointer border-green-500 rounded' to={'/create'}>Crear</Link>                 
                     <div className='crud-search_input mr-5'>

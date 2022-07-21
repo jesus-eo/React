@@ -3,7 +3,8 @@ import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { addTask, editTask } from '../features/task/taskSlice'
 import {v4 as uuid} from 'uuid'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
+import { showModal } from '../features/task/modalSlice'
 
 
 export const TaskForm = () => {
@@ -14,12 +15,20 @@ export const TaskForm = () => {
         task: '',
         description: ''
     })
+    const navigate = useNavigate();
     const newTask = (e) => {
         setTask({...task, [e.target.name]: e.target.value })
     } 
     const createEditTask = (e) => { 
         e.preventDefault(); 
-        params.tareaId ? dispatch(editTask(task)) : dispatch(addTask({...task, id: uuid()}))
+        if (params.tareaId) {
+            dispatch(editTask(task))
+            dispatch(showModal({texto: ' editada '}))
+        } else {
+            dispatch(addTask({...task, id: uuid()})); 
+            dispatch(showModal({texto:' creada '}));
+        }
+        navigate(-1);
     }
 
     useEffect(() => {
@@ -58,8 +67,10 @@ export const TaskForm = () => {
                     value={task.description}
                     title='Introduce la descripción de la tarea a realizar'></textarea>
             </div>
-            <div className='flex w-full justify-center items-center'>
+            <div className='flex w-full justify-center items-center gap-2'>
             <button className='bg-blue-500 px-4 py-1 cursor-pointer rounded-md border-none text-white hover:bg-blue-400 ' type="submit">Save</button>
+            <button className='bg-green-500 px-4 py-1 cursor-pointer rounded-md border-none text-white hover:bg-green-400 ' type="button"
+            onClick={() => {navigate(-1)}}>Volver</button>
             </div>
         </form>
     </div>
